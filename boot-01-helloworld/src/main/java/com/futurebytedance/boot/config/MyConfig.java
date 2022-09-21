@@ -3,6 +3,8 @@ package com.futurebytedance.boot.config;
 import ch.qos.logback.core.db.DBHelper;
 import com.futurebytedance.boot.bean.Pet;
 import com.futurebytedance.boot.bean.User;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -23,6 +25,8 @@ import org.springframework.context.annotation.Import;
  */
 @Import({User.class, DBHelper.class})
 @Configuration(proxyBeanMethods = true) //告诉SpringBoot这时一个配置类 == 配置文件
+//@ConditionalOnBean(name = "tom")
+@ConditionalOnMissingBean(name = "tom")
 public class MyConfig {
     /**
      * 外部无论对配置类中的这个组件注册方法调用多少次获取的都是之前注册容器中的单实例对象
@@ -38,7 +42,7 @@ public class MyConfig {
         return zhangsan;
     }
 
-    @Bean("tom")
+    @Bean("tom22")
     public Pet tomcatPet() {
         return new Pet("tomcat");
     }
