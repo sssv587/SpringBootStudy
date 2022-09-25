@@ -7,3 +7,7 @@ spring:
     add-mappings: true
     cache:
       period: 1000
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
