@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 //@Controller
 //@ResponseBody
+//JRebel
 @Slf4j
 @RestController
 public class HelloController {
