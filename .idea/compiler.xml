@@ -9,11 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="boot-01-helloworld" />
         <module name="boot-02-helloworld" />
+        <module name="boot-05-web-01" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="boot-01-helloworld" target="8" />
       <module name="boot-02-helloworld" target="1.8" />
+      <module name="boot-05-web-01" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
