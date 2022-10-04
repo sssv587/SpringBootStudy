@@ -17,7 +17,7 @@ import java.util.Map;
 @RestController
 public class ParameterTestController {
     /**
-     * 数据绑定：页面提交的请求数据(GRT、POST)都可以和对象绑定
+     * 数据绑定：页面提交的请求数据(GET、POST)都可以和对象绑定
      * @param person
      * @return
      */
