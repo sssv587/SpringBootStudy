@@ -22,7 +22,7 @@ public class TableController {
     }
 
     @GetMapping("/dynamic_table")
-    public String dynamic_table(Model model) {
+    public String dynamic_table(Model model) { //RedirectAttributes
         //表格内容的遍历
         List<User> users = Arrays.asList(new User("zhangsan", "123456"),
                 new User("lisi", "123444"),
