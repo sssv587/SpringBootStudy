@@ -1,6 +1,7 @@
 package com.futurebytedance.boot05webadmin.controller;
 
 import com.futurebytedance.boot05webadmin.bean.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpSession;
  * @date 2022/10/7 - 20:51
  * @Description
  */
+@Slf4j
 @Controller
 public class IndexController {
     /**
@@ -48,14 +50,16 @@ public class IndexController {
      */
     @GetMapping("/main.html")
     public String mainPage(HttpSession session, Model model) {
+        log.info("当前方式是:{}", "mainPage");
         //是否登录 拦截器，过滤器
-        Object loginUser = session.getAttribute("loginUser");
-        if (loginUser != null) {
-            return "main";
-        } else {
-            //回到登录页面
-            model.addAttribute("msg", "请重新登录!");
-            return "login";
-        }
+//        Object loginUser = session.getAttribute("loginUser");
+//        if (loginUser != null) {
+//            return "main";
+//        } else {
+//            //回到登录页面
+//            model.addAttribute("msg", "请重新登录!");
+//            return "login";
+//        }
+        return "main";
     }
 }
