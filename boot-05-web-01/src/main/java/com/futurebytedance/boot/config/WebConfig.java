@@ -1,16 +1,20 @@
 package com.futurebytedance.boot.config;
 
 import com.futurebytedance.boot.bean.Pet;
+import com.futurebytedance.boot.converter.DogMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.util.UrlPathHelper;
 import sun.plugin2.message.helper.URLHelper;
+
+import java.util.List;
 
 /**
  * @author yuhang.sun
@@ -31,6 +35,11 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public WebMvcConfigurer webMvcConfigurer() {
         return new WebMvcConfigurer() {
+            @Override
+            public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+                converters.add(new DogMessageConverter());
+            }
+
             @Override
             public void configurePathMatch(PathMatchConfigurer configurer) {
                 UrlPathHelper urlHelper = new UrlPathHelper();

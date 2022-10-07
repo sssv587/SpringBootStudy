@@ -23,6 +23,20 @@ public class ResponseTestController {
         return null;
     }
 
+    /**
+     * 1、浏览器发送请求直接返回xml  [application/xml]  jacksonXmlConverter
+     * 2、如果是ajax请求 返回json   [application/json] jacksonJsonConverter
+     * 3、如果是app发请求，返回自定义协议数据 [application/x-dog] xxxConverter
+     *      属性值1;属性值2;
+     *
+     * 步骤:
+     * 1、添加在定义的MessageConverter进系统底层
+     * 2、系统底层就会统计出所有MessageConverter能操作哪些类型
+     * 3、客户端内容协商[dog--->dog]
+     *
+     * 作业：如何以参数的方式进行内容协商?
+     * @return
+     */
     @ResponseBody //利用返回值处理器里面的消息转换器进行处理
     @GetMapping("/test/person")
     public Person getPerson() {
