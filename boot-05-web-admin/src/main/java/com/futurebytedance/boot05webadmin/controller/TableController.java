@@ -1,9 +1,11 @@
 package com.futurebytedance.boot05webadmin.controller;
 
 import com.futurebytedance.boot05webadmin.bean.User;
+import com.futurebytedance.boot05webadmin.exception.UserTooManyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,8 +18,15 @@ import java.util.List;
  */
 @Controller
 public class TableController {
+    /**
+     * 不带请求参数或者参数类型不读 400：Bad Request 一般都是浏览器的参数没有传递正确
+     *
+     * @return
+     */
     @GetMapping("/basic_table")
+//    public String basic_table(@RequestParam("a") int a) {
     public String basic_table() {
+//        int b = 10 / 0;
         return "table/basic_table";
     }
 
@@ -31,6 +40,9 @@ public class TableController {
 
         model.addAttribute("users", users);
 
+//        if (users.size() > 3) {
+//            throw new UserTooManyException();
+//        }
         return "table/dynamic_table";
     }
 
