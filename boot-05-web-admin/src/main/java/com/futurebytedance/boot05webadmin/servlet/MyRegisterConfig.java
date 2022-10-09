@@ -13,6 +13,9 @@ import java.util.Arrays;
  * @version 1.0
  * @date 2022/10/10 - 0:19
  * @Description
+ *
+ * 1、MyServlet ---> /my
+ * 2、DispatcherServlet
  */
 //proxyBeanMethods = true：保证依赖的组件始终是单实例的
 @Configuration
