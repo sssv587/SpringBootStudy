@@ -20,11 +20,12 @@ import java.util.Arrays;
  * @date 2022/10/12 - 23:43
  * @Description
  */
-@Configuration
+@Deprecated
+//@Configuration
 public class MyDataSourceConfig {
     // 默认的自动配置是判断容器中没有才会配@ConditionalOnMissingBean(DataSource.class)
-    @ConfigurationProperties("spring.datasource")
-    @Bean
+//    @ConfigurationProperties("spring.datasource")
+//    @Bean
     public DataSource dataSource() throws SQLException {
         DruidDataSource dataSource = new DruidDataSource();
         //加入监控功能
@@ -39,7 +40,7 @@ public class MyDataSourceConfig {
      *
      * @return
      */
-    @Bean
+//    @Bean
     public ServletRegistrationBean statViewServlet() {
         StatViewServlet statViewServlet = new StatViewServlet();
         ServletRegistrationBean<StatViewServlet> registrationBean = new ServletRegistrationBean<>(statViewServlet, "/druid/*");
@@ -53,7 +54,7 @@ public class MyDataSourceConfig {
     /**
      * WebStatFilter用于采集web-jdbc关联监控的数据
      */
-    @Bean
+//    @Bean
     public FilterRegistrationBean webStatFilter() {
         WebStatFilter webStatFilter = new WebStatFilter();
 
