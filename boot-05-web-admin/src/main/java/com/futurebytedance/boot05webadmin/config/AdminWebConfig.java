@@ -17,15 +17,16 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
  * @Description 1、编写一个拦截器实现HandlerInterceptor接口
  * 2、拦截器注册到容器中(实现WebMvcConfigurer的addInterceptors)
  * 3、指定拦截规则 [如果是拦截所有，那么静态资源也会被拦截]
- *
+ * <p>
  * EnableWebMvc:全面接管SpringMVC
- *      1、静态资源? 视图解析器? 欢迎页。。。 全部失效
+ * 1、静态资源? 视图解析器? 欢迎页。。。 全部失效
  */
 //@EnableWebMvc
 @Configuration
 public class AdminWebConfig implements WebMvcConfigurer {
     /**
      * 访问 /aa/** 都去classpath:/static/ 下面进行匹配
+     *
      * @param registry
      */
 //    @Override
@@ -33,12 +34,11 @@ public class AdminWebConfig implements WebMvcConfigurer {
 //        registry.addResourceHandler("/aa/**")
 //                .addResourceLocations("classpath:/static/");
 //    }
-
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns("/**") //所有请求都被拦截包括静态资源
-                .excludePathPatterns("/", "/login", "/css/**", "/fonts/**", "/images/**", "/js/**", "/aa/**"); //放行的请求
+                .excludePathPatterns("/", "/login", "/css/**", "/fonts/**", "/images/**", "/js/**", "/aa/**", "/sql/**"); //放行的请求
     }
 
 //    @Bean

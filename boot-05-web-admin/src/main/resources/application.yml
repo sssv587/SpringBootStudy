@@ -4,6 +4,8 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
+    filters: stat,wall
+    max-active: 12
 #    type: com.zaxxer.hikari.HikariDataSource
   jdbc:
     template:
