@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Select;
  * @date 2022/10/14 - 23:47
  * @Description
  */
-@Mapper
+//@Mapper
 public interface CityMapper {
     @Select("select * from city where id=#{id}")
     City getById(Long id);

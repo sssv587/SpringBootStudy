@@ -33,16 +33,19 @@ public class TableController {
     @GetMapping("/dynamic_table")
     public String dynamic_table(Model model) { //RedirectAttributes
         //表格内容的遍历
-        List<User> users = Arrays.asList(new User("zhangsan", "123456"),
-                new User("lisi", "123444"),
-                new User("haha", "aaaaa"),
-                new User("hehe", "aaddd"));
-
-        model.addAttribute("users", users);
+//        List<User> users = Arrays.asList(new User("zhangsan", "123456"),
+//                new User("lisi", "123444"),
+//                new User("haha", "aaaaa"),
+//                new User("hehe", "aaddd"));
+//
+//        model.addAttribute("users", users);
 
 //        if (users.size() > 3) {
 //            throw new UserTooManyException();
 //        }
+
+        //从数据库中
+
         return "table/dynamic_table";
     }
 

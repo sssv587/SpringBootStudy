@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @date 2022/10/13 - 23:24
  * @Description
  */
-@Mapper
+//@Mapper
 public interface AccountMapper {
     Account getAcct(Long id);
 }
