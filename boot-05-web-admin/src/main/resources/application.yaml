@@ -36,3 +36,10 @@ spring:
   jdbc:
     template:
       query-timeout: 3
+
+# 配置mybatis规则
+mybatis:
+#  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

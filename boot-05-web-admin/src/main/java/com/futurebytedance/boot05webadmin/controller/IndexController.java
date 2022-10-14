@@ -1,6 +1,8 @@
 package com.futurebytedance.boot05webadmin.controller;
 
+import com.futurebytedance.boot05webadmin.bean.Account;
 import com.futurebytedance.boot05webadmin.bean.User;
+import com.futurebytedance.boot05webadmin.service.AccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -9,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
@@ -24,6 +27,15 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
     @Autowired
     JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    AccountService accountService;
+
+    @ResponseBody
+    @GetMapping("/acct")
+    public Account getById(@RequestParam("id") Long id) {
+        return accountService.getAcctById(id);
+    }
 
     @ResponseBody
     @GetMapping("/sql")

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.futurebytedance.boot05webadmin.mapper.AccountMapper">
+    <!-- Account getAcct(Long id);-->
+    <select id="getAcct" resultType="com.futurebytedance.boot05webadmin.bean.Account">
+        select * from account_tbl where id=#{id}
+    </select>
+</mapper>
