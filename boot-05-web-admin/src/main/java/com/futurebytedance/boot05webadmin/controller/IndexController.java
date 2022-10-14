@@ -1,8 +1,10 @@
 package com.futurebytedance.boot05webadmin.controller;
 
 import com.futurebytedance.boot05webadmin.bean.Account;
+import com.futurebytedance.boot05webadmin.bean.City;
 import com.futurebytedance.boot05webadmin.bean.User;
 import com.futurebytedance.boot05webadmin.service.AccountService;
+import com.futurebytedance.boot05webadmin.service.CityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -30,6 +32,22 @@ public class IndexController {
 
     @Autowired
     AccountService accountService;
+
+    @Autowired
+    CityService cityService;
+
+    @ResponseBody
+    @PostMapping("/city")
+    public City saveCity(City city) {
+        cityService.saveCity(city);
+        return city;
+    }
+
+    @ResponseBody
+    @GetMapping("/city")
+    public City getCityById(@RequestParam("id") Long id) {
+        return cityService.getById(id);
+    }
 
     @ResponseBody
     @GetMapping("/acct")
