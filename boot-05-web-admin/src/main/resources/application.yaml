@@ -30,6 +30,17 @@ spring:
           config:
             drop-table-allow: false
 
+  redis:
+    client-type: jedis
+    url: redis://localhost:6379
+    jedis:
+      pool:
+        max-active: 10
+#    lettuce:
+#      pool:
+#        max-active: 10
+#        min-idle: 5
+
   #    filters: stat,wall
   #    max-active: 12
   #    type: com.zaxxer.hikari.HikariDataSource
