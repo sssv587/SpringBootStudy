@@ -1,27 +1,15 @@
 package com.futurebytedance.boot05webadmin.service;
 
 import com.futurebytedance.boot05webadmin.bean.City;
-import com.futurebytedance.boot05webadmin.mapper.CityMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * @author yuhang.sun
  * @version 1.0
- * @date 2022/10/14 - 23:49
+ * @date 2022/10/15 - 20:30
  * @Description
  */
-@Service
-public class CityService {
-    @Autowired
-    CityMapper cityMapper;
+public interface CityService {
+    City getById(Long id);
 
-    public City getById(Long id) {
-        return cityMapper.getById(id);
-    }
-
-    public City saveCity(City city) {
-        cityMapper.insert(city);
-        return city;
-    }
+    City saveCity(City city);
 }
