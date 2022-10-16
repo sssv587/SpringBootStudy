@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/boot-02-helloworld/pom.xml" />
         <option value="$PROJECT_DIR$/boot-05-web-01/pom.xml" />
         <option value="$PROJECT_DIR$/boot-05-web-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-05-adminserver/pom.xml" />
       </list>
     </option>
   </component>
