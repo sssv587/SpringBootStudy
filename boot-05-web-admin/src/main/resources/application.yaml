@@ -36,10 +36,10 @@ spring:
     jedis:
       pool:
         max-active: 10
-#    lettuce:
-#      pool:
-#        max-active: 10
-#        min-idle: 5
+  #    lettuce:
+  #      pool:
+  #        max-active: 10
+  #        min-idle: 5
 
   #    filters: stat,wall
   #    max-active: 12
@@ -50,7 +50,24 @@ spring:
 
 # 配置mybatis规则
 mybatis:
-#  config-location: classpath:mybatis/mybatis-config.xml
+  #  config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
+
+# management是所有actuator的配置
+# management.endpoint.端点名.xxx 对某个端点的具体配置
+management:
+  endpoints:
+    enabled-by-default: false # 默认开启所有端点 true
+    web:
+      exposure:
+        include: '*' #以Web方式暴漏所有端点
+  endpoint:
+    health:
+      show-details: ALWAYS
+      enabled: true
+    info:
+      enabled: true
+    beans:
+      enabled: true
