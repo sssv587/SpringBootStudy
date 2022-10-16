@@ -71,3 +71,10 @@ management:
       enabled: true
     beans:
       enabled: true
+    metrics:
+      enabled: true
+info:
+  appName: boot-admin
+  appVersion: 1.0.0
+#  mavenProjectName: @project.artifactId@ #使用@@可以获取maven的pom文件值
+#  mavenProjectVersion: @project.version@
