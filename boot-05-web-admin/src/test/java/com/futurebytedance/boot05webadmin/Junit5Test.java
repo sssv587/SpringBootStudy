@@ -5,7 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author yuhang.sun
@@ -13,17 +16,81 @@ import java.util.concurrent.TimeUnit;
  * @date 2022/10/16 - 19:36
  * @Description
  */
-@SpringBootTest
+//@SpringBootTest
 @DisplayName("junit5功能测试类")
 public class Junit5Test {
-    @Autowired
-    JdbcTemplate jdbcTemplate;
+//    @Autowired
+//    JdbcTemplate jdbcTemplate;
+
+    /**
+     * 断言：前面断言失败，后面的代码都不会执行
+     */
+    @DisplayName("测试简单断言")
+    @Test
+    void testSimpleAssertions() {
+        int cal = cal(2, 3);
+        //相等
+        assertEquals(5, cal, "业务逻辑计算失败");
+
+        Object obj1 = new Object();
+        Object obj2 = new Object();
+        assertSame(obj1, obj2, "两个对象不一样");
+    }
+
+    int cal(int i, int j) {
+        return i + j;
+    }
+
+    @Test
+    @DisplayName("array assertion")
+    void array() {
+        assertArrayEquals(new int[]{1, 2}, new int[]{1, 2}, "数组内容不相等");
+    }
 
     @DisplayName("测试displayname注解")
     @Test
     void testDisplayName() {
         System.out.println(1);
-        System.out.println(jdbcTemplate);
+//        System.out.println(jdbcTemplate);
+    }
+
+    @Test
+    @DisplayName("组合断言")
+    void all() {
+        /**
+         * 所有断言需要全部成功
+         */
+        assertAll("test"
+                , () -> assertTrue(true, "结果不为true")
+                , () -> assertEquals(2, 2, "结果不是预期的"));
+
+        System.out.println("=====================================================");
+    }
+
+    @DisplayName("异常断言")
+    @Test
+    void testException() {
+        /**
+         * 断定业务逻辑一定出现异常
+         */
+        assertThrows(ArithmeticException.class, () -> {
+            int i = 10 / 0;
+        }, "业务逻辑居然正常运行?");
+    }
+
+    @Test
+    @DisplayName("超时测试")
+    public void timeoutTest() {
+        //如果测试方法时间超过1s将会异常
+        Assertions.assertTimeout(Duration.ofMillis(1000), () -> Thread.sleep(500));
+    }
+
+    @DisplayName("快速失败")
+    @Test
+    void testFail() {
+        if (1 == 2) {
+            fail("测试失败");
+        }
     }
 
     @Disabled
