@@ -23,6 +23,16 @@ public class Junit5Test {
 //    JdbcTemplate jdbcTemplate;
 
     /**
+     * 测试前置条件
+     */
+    @DisplayName("测试前置条件")
+    @Test
+    void testAssumptions() {
+        Assumptions.assumeTrue(false,"结果不是true");
+        System.out.println("111111");
+    }
+
+    /**
      * 断言：前面断言失败，后面的代码都不会执行
      */
     @DisplayName("测试简单断言")
