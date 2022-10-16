@@ -47,6 +47,14 @@ spring:
   jdbc:
     template:
       query-timeout: 3
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888
+        instance:
+          prefer-ip: true  #使用ip注册进来
+  application:
+    name: boot-05-web-admin
 
 # 配置mybatis规则
 mybatis:
@@ -59,22 +67,27 @@ mybatis:
 # management.endpoint.端点名.xxx 对某个端点的具体配置
 management:
   endpoints:
-    enabled-by-default: false # 默认开启所有端点 true
+    enabled-by-default: true  #默认开启所有监控端点  true
     web:
       exposure:
-        include: '*' #以Web方式暴漏所有端点
-  endpoint:
+        include: '*' # 以web方式暴露所有端点
+
+  endpoint:   #对某个端点的具体配置
     health:
-      show-details: ALWAYS
+      show-details: always
       enabled: true
+
     info:
       enabled: true
+
     beans:
       enabled: true
+
     metrics:
       enabled: true
+
 info:
   appName: boot-admin
   appVersion: 1.0.0
-#  mavenProjectName: @project.artifactId@ #使用@@可以获取maven的pom文件值
+#  mavenProjectName: @project.artifactId@
 #  mavenProjectVersion: @project.version@
