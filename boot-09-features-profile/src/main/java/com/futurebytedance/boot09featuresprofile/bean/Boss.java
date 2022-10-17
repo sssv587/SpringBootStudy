@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
  * @date 2022/10/17 - 23:33
  * @Description
  */
-@Profile("prod")
+@Profile(value = {"prod", "default"})
 @Component
 @ConfigurationProperties("person")
 @Data
-public class Boss implements Person{
+public class Boss implements Person {
     private String name;
     private Integer age;
 
