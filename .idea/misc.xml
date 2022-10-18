@@ -10,6 +10,9 @@
         <option value="$PROJECT_DIR$/boot-05-adminserver/pom.xml" />
         <option value="$PROJECT_DIR$/boot-09-features-profile/pom.xml" />
         <option value="$PROJECT_DIR$/boot-09-customer-starter/my-springboot-starter-aotuconfig/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-09-customer-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-09-customer-autoconfig/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-09-use-customer-starter/pom.xml" />
       </list>
     </option>
   </component>

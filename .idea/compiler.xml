@@ -7,7 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="boot-09-customer-autoconfig" />
         <module name="boot-05-web-admin" />
+        <module name="boot-09-use-customer-starter" />
+        <module name="boot-09-customer-starter" />
         <module name="boot-05-web-01" />
         <module name="boot-05-adminserver" />
         <module name="boot-01-helloworld" />
@@ -22,7 +25,8 @@
       <module name="boot-05-adminserver" target="1.8" />
       <module name="boot-05-web-01" target="1.8" />
       <module name="boot-05-web-admin" target="1.8" />
-      <module name="boot-09-customer-starter" target="1.8" />
+      <module name="boot-09-customer-autoconfig" target="1.8" />
+      <module name="boot-09-customer-starter" target="8" />
       <module name="boot-09-customer-starter-autoconfig" target="8" />
       <module name="boot-09-features-profile" target="1.8" />
       <module name="boot-09-use-customer-starter" target="1.8" />
