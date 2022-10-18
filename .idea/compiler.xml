@@ -8,10 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="boot-05-web-admin" />
-        <module name="boot-09-customer-starter" />
         <module name="boot-05-web-01" />
         <module name="boot-05-adminserver" />
         <module name="boot-01-helloworld" />
+        <module name="my-springboot-starter-aotuconfig" />
         <module name="boot-09-features-profile" />
         <module name="boot-02-helloworld" />
       </profile>
@@ -23,14 +23,19 @@
       <module name="boot-05-web-01" target="1.8" />
       <module name="boot-05-web-admin" target="1.8" />
       <module name="boot-09-customer-starter" target="1.8" />
+      <module name="boot-09-customer-starter-autoconfig" target="8" />
       <module name="boot-09-features-profile" target="1.8" />
+      <module name="boot-09-use-customer-starter" target="1.8" />
       <module name="boot05-adminserver" target="1.8" />
       <module name="boot09-features-profile" target="1.8" />
+      <module name="my-springboot-starter-aotuconfig" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="boot-01-helloworld" options="-parameters" />
+      <module name="boot-09-customer-starter-autoconfig" options="-parameters" />
+      <module name="my-springboot-starter-aotuconfig" options="-parameters" />
     </option>
   </component>
 </project>
