@@ -1,0 +1,8 @@
+org.springframework.context.ApplicationContextInitializer=\
+  com.futurebytedance.boot09usecustomerstarter.listener.MyApplicationContextInitializer
+
+org.springframework.context.ApplicationListener=\
+  com.futurebytedance.boot09usecustomerstarter.listener.MyApplicationListener
+
+org.springframework.boot.SpringApplicationRunListener=\
+  com.futurebytedance.boot09usecustomerstarter.listener.MySpringApplicationRunListener
